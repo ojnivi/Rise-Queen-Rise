@@ -1,0 +1,75 @@
+name: Content Validation
+
+on:
+  pull_request:
+    paths:
+      - '**.md'
+      - '**.txt'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Check for common issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            const issues = [];
+            
+            // Get changed files
+            const { data: files } = await github.rest.pulls.listFiles({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+            });
+            
+            for (const file of files) {
+              if (!file.filename.endsWith('.md') && !file.filename.endsWith('.txt')) continue;
+              
+              try {
+                const content = fs.readFileSync(file.filename, 'utf8');
+                
+                // Check for trailing whitespace
+                const lines = content.split('\n');
+                lines.forEach((line, i) => {
+                  if (line.trimEnd() !== line) {
+                    issues.push(`${file.filename}:${i + 1} - Trailing whitespace`);
+                  }
+                });
+                
+                // Check for missing final newline
+                if (content.length > 0 && !content.endsWith('\n')) {
+                  issues.push(`${file.filename} - Missing newline at end of file`);
+                }
+                
+                // Check for double spaces after sentences
+                if (content.match(/\.\s{2,}[A-Z]/)) {
+                  issues.push(`${file.filename} - Double spaces after periods (use single space)`);
+                }
+              } catch (e) {
+                console.log(`Could not read ${file.filename}: ${e.message}`);
+              }
+            }
+            
+            if (issues.length > 0) {
+              console.log('Found validation issues:');
+              issues.forEach(issue => console.log('  - ' + issue));
+              // Note: Not failing the workflow, just reporting
+              core.notice('Found content issues:\n' + issues.join('\n'));
+            } else {
+              core.info('✅ All content validation checks passed!');
+            }
+      
+      - name: Run markdown linter
+        uses: nosborn/github-action-markdown-cli@v3.3.0
+        with:
+          files: .
+          config_file: .markdownlint.json
+        continue-on-error: true
