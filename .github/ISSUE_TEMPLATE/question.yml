@@ -1,0 +1,43 @@
+name: ❓ Ask a Question
+description: Ask the community a question about Rise Queen Rise
+labels: ["question"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question? We're here to help! 👑
+        Use GitHub Discussions for general questions, or open an issue if you found a problem.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know?
+      placeholder: "I have a question about..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Provide any context that might help us answer your question
+      placeholder: "Here's some background information..."
+
+  - type: textarea
+    id: what_you_tried
+    attributes:
+      label: What You've Already Tried
+      description: What have you already done to find the answer?
+      placeholder: "I've already tried..."
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have read the Code of Conduct
+          required: true
+        - label: I have checked the documentation and discussions for similar questions
+          required: true
