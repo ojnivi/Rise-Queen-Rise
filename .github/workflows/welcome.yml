@@ -1,0 +1,38 @@
+name: Welcome New Contributors
+
+on:
+  pull_request:
+    types: [opened]
+  issues:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
+    steps:
+      - name: Welcome on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👑 Welcome to Rise Queen Rise! Thank you for your contribution!\n\nWe\'re so excited to have you here. Please make sure to:\n- Review our [Contributing Guidelines](https://github.com/${{ github.repository }}/blob/main/CONTRIBUTING.md)\n- Follow our [Code of Conduct](https://github.com/${{ github.repository }}/blob/main/CODE_OF_CONDUCT.md)\n- Check out our [Discussions](https://github.com/${{ github.repository }}/discussions) to connect with the community\n\nIf you have any questions, don\'t hesitate to ask. We\'re here to support you! ✨'
+            })
+      
+      - name: Welcome on Issue
+        if: github.event_name == 'issues'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👑 Welcome to Rise Queen Rise! Thank you for opening an issue!\n\nWe appreciate your feedback and ideas. Please make sure your issue includes:\n- A clear description of the problem or suggestion\n- Any relevant context or examples\n- Steps to reproduce (if it\'s a bug)\n\nFeel free to check our [Discussions](https://github.com/${{ github.repository }}/discussions) if you want to chat before creating an issue. We\'re here to help! 💖'
+            })
