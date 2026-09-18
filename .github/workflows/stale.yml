@@ -1,0 +1,56 @@
+name: Close Stale Issues
+
+on:
+  schedule:
+    # Run every week on Monday at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Close stale issues and PRs
+        uses: actions/stale@v9
+        with:
+          # Days before marking as stale
+          days-before-stale: 90
+          # Days before closing stale issues
+          days-before-close: 14
+          # Message to post when marking stale
+          stale-issue-message: |
+            👋 This issue has been inactive for 90 days. We're marking it as stale to keep our repository organized.
+            
+            If you're still interested in this issue or have updates:
+            - Add a comment to keep it open
+            - React with 👍 to show your support
+            - Check our [Discussions](https://github.com/${{ github.repository }}/discussions) to chat with the community
+            
+            This issue will be closed in 14 days if there's no activity. Thank you! 👑✨
+          # Message to post when closing stale
+          close-issue-message: |
+            Closing this issue due to inactivity. If you'd like to revisit this or have new information, feel free to reopen it or create a new issue. We're always here to help! 💖
+          
+          # Same for PRs
+          stale-pr-message: |
+            👋 This PR has been inactive for 90 days. We're marking it as stale to keep our repository organized.
+            
+            If you'd still like to proceed with this PR:
+            - Add a comment with updates
+            - Push new commits to keep it active
+            - Reach out in [Discussions](https://github.com/${{ github.repository }}/discussions) if you need support
+            
+            This PR will be closed in 14 days if there's no activity. Thank you for your contribution! 👑✨
+          
+          close-pr-message: |
+            Closing this PR due to inactivity. If you'd like to continue, feel free to reopen it with updates. We appreciate your contribution! 💖
+          
+          # Labels to track stale items
+          stale-issue-label: 'stale'
+          stale-pr-label: 'stale'
+          # Don't mark issues/PRs with these labels
+          exempt-issue-labels: 'pinned,security,bug,enhancement'
+          exempt-pr-labels: 'pinned,security,work-in-progress'
