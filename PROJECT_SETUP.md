@@ -1,6 +1,6 @@
 # 📚 Rise Queen Rise - Project Setup Guide
 
-**Last Updated:** September 18, 2026
+**Last Updated:** September 27, 2026
 
 ---
 
@@ -49,7 +49,7 @@ Rise-Queen-Rise/
 │   └── PULL_REQUEST_TEMPLATE.md
 ├── graphics/                         # Visual assets folder
 │   └── README.md                    # Graphics contribution guide
-├── phi/                             # Personal Health Information folder
+├── mind-body-and-soul/              # Mind, body & soul wellness folder
 │   └── README.md                    # Wellness contribution guide
 ├── README.md                        # Main project overview
 ├── CONTRIBUTING.md                  # How to contribute
@@ -101,8 +101,8 @@ Rise-Queen-Rise/
   - `templates/` - Design templates
   - `illustrations/` - Artwork
 
-#### 6. **phi/** 💪
-- **Purpose:** Personal Health Information and wellness content
+#### 6. **mind-body-and-soul/** 💪
+- **Purpose:** Mind, body & soul wellness content
 - **Suggested Subfolders:**
   - `mental-health/` - Mental wellness resources
   - `physical-wellness/` - Fitness and health content
@@ -323,7 +323,7 @@ You might want to create a simple landing page or social media post that include
 
 ### **Important Folders**
 - Graphics: [graphics/](./graphics/)
-- Wellness/Health: [phi/](./phi/)
+- Mind, Body & Soul: [mind-body-and-soul/](./mind-body-and-soul/)
 - Workflows: [.github/workflows/](./.github/workflows/)
 
 ### **Important Links**
@@ -353,11 +353,12 @@ You've built an amazing foundation for Rise Queen Rise! This project has:
 | Date | Changes |
 |------|---------|
 | 2026-09-18 | Initial setup guide created with all project documentation |
+| 2026-09-27 | Renamed `phi/` to `mind-body-and-soul/` |
 
 ---
 
 **Created with 💖 for the Rise Queen Rise Community**
 
-*Last Updated: September 18, 2026*
+*Last Updated: September 27, 2026*
 
 *For questions or updates to this guide, please open an issue or discussion!*
