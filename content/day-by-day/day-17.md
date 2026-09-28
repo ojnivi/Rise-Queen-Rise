@@ -2,7 +2,7 @@
 **Week:** Week 3 — Breakthrough
 
 ## Graphic Prompt
-**GAP:** Graphic prompt missing in source paste — voiceover/CTA/watermark preserved.
+An African American woman rises from purple ash and golden embers. Her butterfly wings are larger, jeweled, and luminous. Purple and gold butterflies fly upward from the ashes around her. Her gown appears forged from royal velvet, molten gold, and crystal dust. The atmosphere is phoenix-like, dramatic, victorious, and luxurious.
 
 ## Voiceover
 “What tried to burn you only revealed your glow. What tried to bury you only planted your rise. Queen, even your ashes know how to become wings.”
