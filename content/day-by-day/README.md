@@ -18,7 +18,7 @@
 | 14 | STANDING TALLER | Week 2 — Wings & Power | Comment “I STAND TALL.”… | — |
 | 15 | THE BECOMING CEREMONY | Week 3 — Breakthrough | Comment “I’M STILL BECOMING.”… | — |
 | 16 | CUTTING INVISIBLE STRINGS | Week 3 — Breakthrough | Comment “I CUT THE STRINGS.”… | — |
-| 17 | RISING FROM ASHES | Week 3 — Breakthrough | Comment “I RISE FROM THIS.”… | Missing graphic prompt |
+| 17 | RISING FROM ASHES | Week 3 — Breakthrough | Comment “I RISE FROM THIS.”… | — |
 | 18 | THE GARDEN OF NEW POWER | Week 3 — Breakthrough | Comment “I AM BLOOMING.”… | — |
 | 19 | THE CROWN WITHIN | Week 3 — Breakthrough | Comment “THE CROWN IS WITHIN.”… | — |
 | 20 | FULL BREAKTHROUGH | Week 3 — Breakthrough | Comment “MY WINGS ARE READY.”… | — |
@@ -41,6 +41,5 @@
 - Floating-word 16–20 (partial): `../prompts/floating-word-16-20-partial.md`
 
 ## Gaps to fill
-1. Day 17 graphic prompt blank
-2. Floating-word prompts 16, 17, 20 incomplete
-3. Images still to be added when Juanivi drops them
+1. Floating-word prompts 16, 17, 20 incomplete
+2. Images still to be added when Juanivi drops them
