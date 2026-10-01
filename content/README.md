@@ -11,7 +11,7 @@ Use `day-by-day/` (Days 01–30) and `calendar/30-day-lady-butterfly-prompt-cale
 - `calendar/` — full 30-day Lady Butterfly calendar
 - `day-by-day/` — one file per day + master index
 - `series/know-your-worth/` — quote cards + Leonardo prompts
-- `prompts/` — floating-word and other prompt banks
+- `prompts/` — floating-word, queen-profile, and Meta AI 20 image-card prompt banks (`meta-ai-20-image-cards.md`)
 - Older drafts kept at folder root for reference
 
 ## Repo target
